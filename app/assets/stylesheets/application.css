@@ -15,8 +15,19 @@
  */
  @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
+ @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
+ 
 * {
   box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
+  text-decoration: none;
 }
+
+.page-title h1{
+  font-size: 30px;
+  color:  #191970;
+  font-weight: bold;
+  margin: 10px 15px 10px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
