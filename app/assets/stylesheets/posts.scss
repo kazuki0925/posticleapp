@@ -1,0 +1,29 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-page-main {
+  background-color: #fffacd;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 30px;
+}
+// index.html.erbの記事一覧
+.articles-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.article-list {
+  background-color: white;
+  border: 1px solid gray;
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 10px;
+}
+
+.article-image {
+  width: 100%;
+}

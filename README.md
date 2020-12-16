@@ -10,9 +10,9 @@
 
 ### Association
 
-- has_many :posts
+- has_many :articles
 
-## postsテーブル
+## articlesテーブル
 
 | Column                | Type       | Options           |
 |-----------------------|------------|-------------------|
