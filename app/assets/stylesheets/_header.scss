@@ -1,6 +1,6 @@
-header {
+.top-page-header {
   height: 90px;
-  background-color: #ffa74f;
+  background-color: #191970;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,11 +17,11 @@ header {
   font-family: 'Londrina Shadow', cursive;
 }
 
-.header-right-list {
+.header-right-lists {
   display: flex;
 }
 
-.header-right-list li{
+.header-right-list {
   color: white;
   font-weight: bold;
   font-size: 20px;
