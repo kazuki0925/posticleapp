@@ -4,7 +4,7 @@
   <%= link_to edit_article_path do %>
     <%= image_tag "edit_img.png", class: "user-edit-img" %>
   <% end %>
-  <%= link_to edit_article_path do %>
+  <%= link_to article_path(@article), method: :delete do %>
     <%= image_tag "delete_img.png", class: "user-delete-img" %>
   <% end %>
 <% end %>

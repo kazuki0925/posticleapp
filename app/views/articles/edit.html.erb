@@ -1,0 +1,36 @@
+<%= render 'shared/header' %>
+<div class="article-new-contents">
+
+  <div class="page-title">
+    <h1>記事を編集</h1>
+  </div>
+
+  <div class="article-new-form">
+    <%= form_with model: @article, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <label for="cover-img-select" >
+      <div class=img-select-btn>
+        <p class="img-select-text">カバー画像の選択はこちら</p>
+        <%= image_tag "cover_image.png", class: "img-select-icon" %>
+      </div>
+      <%= f.file_field :image, id: "cover-img-select", class: "hidden" %>
+    </label>
+
+
+    <div class="new-articles">
+      <div class="article-title">
+        <p>タイトル</p>
+        <%= f.text_field :title, class:"input-article-title", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      </div>
+
+      <div class="article-text">
+        <p>本文</p>
+        <%= f.text_area :text, class:"input-article-text", placeholder:"本文", rows:"20", maxlength:"15000", wrap:"soft" %>
+      </div>
+
+      <%= f.submit "記事を更新する", class:"submit-article-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
