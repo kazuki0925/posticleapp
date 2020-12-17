@@ -82,9 +82,6 @@
   right: 25px;
 }
 
-
-
-
 .article-new-form {
   width: 80vw;
   margin: 0 auto;
@@ -114,4 +111,48 @@
   border: none;
   font-size: 20px;
   color: white;
+}
+
+// 記事詳細表示画面
+.user-edit-img {
+  height: 70px;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+}
+
+.user-delete-img {
+  height: 70px;
+  position: fixed;
+  top: 200px;
+  right: 20px;
+}
+
+
+.article-cover-img {
+  background-color: gray;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-img {
+  width: 100%;
+}
+
+.article-main {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.show-article-title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.article-text {
+  font-size: 20px;
+  margin-top: 20px;
 }
