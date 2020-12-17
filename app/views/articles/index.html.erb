@@ -7,11 +7,15 @@
   <div class="top-page-index">
     <ul class="articles-lists">
       <% @articles.each do |article| %>
+      <%= link_to article_path(article) do %>
       <li class="article-list">
-      <% if article.image %>
+      <% if article.image.attached? %>
         <%= image_tag article.image, class: "article-image", alt: "article-image" %>
+        <% else %>
+        <%= image_tag "sample_img.jpg", class: "article-image", alt: "article-image" %>
       <% end %>
         <p class="article-title"><%= article.title %></p>
+      <% end %>
         <p class="article-user">by <%= article.user.nickname %></p>
       </li>
       <% end %>

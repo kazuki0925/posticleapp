@@ -1,0 +1,30 @@
+<%= render 'shared/header' %>
+
+<% if user_signed_in? && current_user.id == @article.user_id %>
+  <%= link_to edit_article_path do %>
+    <%= image_tag "edit_img.png", class: "user-edit-img" %>
+  <% end %>
+  <%= link_to edit_article_path do %>
+    <%= image_tag "delete_img.png", class: "user-delete-img" %>
+  <% end %>
+<% end %>
+
+<div class="article-show-content">
+  <div class="article-cover-img">
+  <% if @article.image.attached? %>
+    <%= image_tag @article.image, class: "header-img" %>
+  <% else %>
+    <%= image_tag "sample_img.jpg", class: "header-img" %>
+  <% end %>
+  </div>
+
+  <div class="article-main">
+    <div class="show-article-title">
+      <h1><%= @article.title %></h1>
+    </div>
+
+    <div class="article-text">
+      <p><%= @article.text %></p>
+    </div>
+  </div>
+</div>
