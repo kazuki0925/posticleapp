@@ -9,6 +9,15 @@
     <%= form_with model: @article, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
+    <label for="cover-img-select" >
+      <div class=img-select-btn>
+        <p class="img-select-text">カバー画像の選択はこちら</p>
+        <%= image_tag "cover_image.png", class: "img-select-icon" %>
+      </div>
+      <%= f.file_field :image, id: "cover-img-select", class: "hidden" %>
+    </label>
+
+
     <div class="new-articles">
       <div class="article-title">
         <p>タイトル</p>

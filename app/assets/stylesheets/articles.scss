@@ -54,6 +54,36 @@
 }
 
 // new.html.erbの新規記事投稿画面
+.img-select-btn {
+  height: 130px;
+  width: 130px;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  border-radius: 10px;
+  background-color: #fffaf0;
+  opacity: 0.8;
+}
+
+.img-select-text {
+  font-size: 10px;
+  position: fixed;
+  top: 105px;
+  right: 15px;
+  font-weight: bold;
+  color: rgb(58, 171, 210);
+
+}
+
+.img-select-icon {
+  height: 100px;
+  position: fixed;
+  top: 125px;
+  right: 25px;
+}
+
+
+
 
 .article-new-form {
   width: 80vw;

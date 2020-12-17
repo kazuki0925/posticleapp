@@ -1,8 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
-
-
   def index
     @articles = Article.all
   end
@@ -22,6 +20,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 end
