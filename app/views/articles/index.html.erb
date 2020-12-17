@@ -61,4 +61,11 @@
       </li>
     </ul>
   </div>
+
+  <%= link_to new_article_path do %>
+  <div class="article-new-btn">
+  <%= image_tag "article_new.png", class: "article-new-img", alt: "article-new-image" %>
+  <p class="article-new-text">New Article</p>
+  </div>
+  <% end %>
 </div>
