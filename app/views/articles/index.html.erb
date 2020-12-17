@@ -6,59 +6,72 @@
   </div>
   <div class="top-page-index">
     <ul class="articles-lists">
+      <% @articles.each do |article| %>
       <li class="article-list">
-      <%= image_tag "cat.png", class: "article-image", alt: "article-image" %>
-      <p class="article-title">猫の昼寝</p>
-      <p class="article-user">by kazuki</p>
+      <% if article.image %>
+        <%= image_tag article.image, class: "article-image", alt: "article-image" %>
+      <% end %>
+        <p class="article-title"><%= article.title %></p>
+        <p class="article-user">by <%= article.user.nickname %></p>
+      </li>
+      <% end %>
+
+      <%# サンプル %>
+      <li class="article-list">
+        <%= image_tag "cat.png", class: "article-image", alt: "article-image" %>
+        <p class="article-title">猫の昼寝</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "drive.jpg", class: "article-image", alt: "article-image" %>
-      <p class="article-title">宮古島ドライブ</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "drive.jpg", class: "article-image", alt: "article-image" %>
+        <p class="article-title">宮古島ドライブ</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "fujisan.JPG", class: "article-image", alt: "article-image" %>
-      <p class="article-title">富士山の麓でバーベキュー</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "fujisan.JPG", class: "article-image", alt: "article-image" %>
+        <p class="article-title">富士山の麓でバーベキュー</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "happy_newyear-19.jpg", class: "article-image", alt: "article-image" %>
-      <p class="article-title">新年の抱負</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "happy_newyear-19.jpg", class: "article-image", alt: "article-image" %>
+        <p class="article-title">新年の抱負</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "kouyou.jpg", class: "article-image", alt: "article-image" %>
-      <p class="article-title">紅葉の季節</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "kouyou.jpg", class: "article-image", alt: "article-image" %>
+        <p class="article-title">紅葉の季節</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "omaturi.jpg", class: "article-image", alt: "article-image" %>
-      <p class="article-title">一夏の思い出</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "omaturi.jpg", class: "article-image", alt: "article-image" %>
+        <p class="article-title">一夏の思い出</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "sakura.jpg", class: "article-image", alt: "article-image" %>
-      <p class="article-title">桜の季節</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "sakura.jpg", class: "article-image", alt: "article-image" %>
+        <p class="article-title">桜の季節</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "snowman_txt.jpg", class: "article-image", alt: "article-image" %>
-      <p class="article-title">初雪</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "snowman_txt.jpg", class: "article-image", alt: "article-image" %>
+        <p class="article-title">初雪</p>
+        <p class="article-user">by kazuki</p>
       </li>
 
       <li class="article-list">
-      <%= image_tag "ocean.JPG", class: "article-image", alt: "article-image" %>
-      <p class="article-title">夏はやっぱり海！</p>
-      <p class="article-user">by kazuki</p>
+        <%= image_tag "ocean.JPG", class: "article-image", alt: "article-image" %>
+        <p class="article-title">夏はやっぱり海！</p>
+        <p class="article-user">by kazuki</p>
       </li>
+      <%# ここまでサンプル %>
+
     </ul>
   </div>
 
