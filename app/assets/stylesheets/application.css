@@ -27,10 +27,14 @@
   font-size: 30px;
   color:  #191970;
   font-weight: bold;
-  margin: 10px 15px 10px;
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  padding: 5px 15px 10px;
 }
 
 .hidden {
   display: none;
+}
+
+body {
+  margin-top: 90px;
 }
