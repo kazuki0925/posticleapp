@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    @favorite = Favorite.find_by(user_id: current_user.id, article_id: params[:id])
   end
 
   def edit

@@ -7,6 +7,14 @@
   <%= link_to article_path(@article), method: :delete do %>
     <%= image_tag "delete_img.png", class: "user-delete-img" %>
   <% end %>
+<% elsif user_signed_in? && @favorite %>
+  <%= link_to article_favorite_path(@article), method: :delete do %>
+    <%= image_tag "favorite.png", class: "user-favorite-img" %>
+  <% end %>
+<% elsif user_signed_in? %>
+  <%= link_to article_favorites_path(@article), method: :post do %>
+    <%= image_tag "unfavorite.png", class: "user-favorite-img" %>
+  <% end %>
 <% end %>
 
 <div class="article-show-content">

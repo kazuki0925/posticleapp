@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-page-main {
+.top-page-index {
+  width: 100vw;
 }
 // index.html.erbの記事一覧
 .articles-lists {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100vw;
 }
 
 .article-list {
@@ -17,7 +19,13 @@
   border-radius: 5px;
   overflow: hidden;
   width: calc((100% - 50px) / 3);
+  height: auto;
   margin-bottom: 10px;
+}
+
+.article-image-content {
+  height: 60%;
+  overflow: hidden;
 }
 
 .article-image {
@@ -51,6 +59,14 @@
   position: fixed;
   bottom: 40px;
   left: 50px;
+}
+
+.favorite {
+  color: gold;
+}
+
+.unfavorite {
+  color: gray;
 }
 
 // new.html.erbの新規記事投稿画面
@@ -125,6 +141,13 @@
   height: 70px;
   position: fixed;
   top: 200px;
+  right: 20px;
+}
+
+.user-favorite-img {
+  height: 70px;
+  position: fixed;
+  top: 100px;
   right: 20px;
 }
 
