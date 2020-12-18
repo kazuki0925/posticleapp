@@ -11,6 +11,7 @@
 ### Association
 
 - has_many :articles
+- has_many :comments
 
 ## articlesテーブル
 
@@ -23,3 +24,17 @@
 ### Association
 
 - belongs_to :user
+- has_many :comments
+
+## commentsテーブル
+
+| Column                | Type       | Options           |
+|-----------------------|------------|-------------------|
+| text                  | text       | null: false       |
+| user                  | references | foreign_key: true |
+| article               | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article

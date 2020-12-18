@@ -1,0 +1,30 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// コメント欄のレイアウト
+.article-comments-content {
+  margin: 20px 0;
+}
+
+.comment-content-form {
+  margin: 20px 0;
+}
+
+.input-article-comment{
+  width: 100%;
+  padding: 10px;
+}
+
+.comment-title {
+  border-bottom: 1px solid gray;
+}
+
+.comment-list {
+  margin: 5px 0 10px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.comment-user-name {
+  text-align: right;
+}
