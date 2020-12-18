@@ -1,0 +1,48 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-profile {
+  width: 70vw;
+  margin: 0 auto;
+  border: 1px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.user-profile h2 {
+  text-align: center;
+}
+
+.table-name {
+  font-size: 20px;
+  padding: 10px 0 ;
+  background-color: lightgray;
+}
+
+.user-profile-list {
+  display: flex;
+}
+
+.user-profile-list h2 {
+  width: 40%;
+  border-top: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  font-size: 20px;
+  padding: 10px 0 ;
+}
+
+.user-profile-list p {
+  width: 60%;
+  padding: 10px;
+  font-size: 20px;
+  border-top: 1px solid lightgray;
+}
+
+.user-post-articles h2 {
+  font-size: 20px;
+  color:  #191970;
+  font-weight: bold;
+  margin: 10px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
