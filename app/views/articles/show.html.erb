@@ -1,7 +1,7 @@
 <%= render 'shared/header' %>
 
 <% if user_signed_in? && current_user.id == @article.user_id %>
-  <%= link_to edit_article_path do %>
+  <%= link_to edit_article_path(@article) do %>
     <%= image_tag "edit_img.png", class: "user-edit-img" %>
   <% end %>
   <%= link_to article_path(@article), method: :delete do %>
@@ -25,6 +25,36 @@
 
     <div class="article-text">
       <p><%= @article.text %></p>
+    </div>
+
+    <div class="article-comments-content">
+
+      <% if user_signed_in? %>
+        <div class="comment-content-form">
+          <%= form_with model: @comment, url: article_comments_path(@article), local: true do |f| %>
+            <h2>コメントフォーム</h2>
+            <%= f.text_area :text, class:"input-article-comment", placeholder:"コメントを入力", rows:"5", maxlength:"250", wrap:"soft"%>
+            <%= f.submit "コメントを送信", class:"comment-submit-btn" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if @comments %>
+        <h2 class="comment-title">コメント</h2>
+        <ul class=comment-lists>
+          <% @comments.each do |comment| %>
+            <li class=comment-list>
+            <p><%= comment.text %></p>
+            <p class="comment-user-name"><%= comment.user.nickname %>さん</p>
+              <% if user_signed_in? && comment.user_id == current_user.id %>
+              <%= link_to "コメントを削除", article_comment_path(comment), method: :delete, class: "comment-delete" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2>この記事に対するコメントはまだありません</h2>
+      <% end %>
     </div>
   </div>
 </div>
