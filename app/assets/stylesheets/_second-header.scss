@@ -1,7 +1,10 @@
 .second-header {
   height: 90px;
-  width: 100vh;
+  width: 100vw;
   background-color: #191970;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .second-header-center{
