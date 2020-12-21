@@ -151,6 +151,20 @@
   right: 20px;
 }
 
+.user-good-img {
+  height: 70px;
+  position: fixed;
+  top: 200px;
+  right: 20px;
+}
+
+.user-bad-img {
+  height: 70px;
+  position: fixed;
+  top: 300px;
+  right: 20px;
+  transform: scale(-1, 1);
+}
 
 .article-cover-img {
   background-color: gray;

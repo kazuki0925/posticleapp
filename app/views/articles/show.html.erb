@@ -17,6 +17,29 @@
   <% end %>
 <% end %>
 
+<% if user_signed_in? && current_user.id != @article.user_id && @good_evaluation %>
+  <%= link_to article_good_evaluation_path(@article), method: :delete do %>
+    <%= image_tag "good.png", class: "user-good-img" %>
+  <% end %>
+  <%= link_to article_bad_evaluations_path(@article), method: :post do %>
+    <%= image_tag "unbad.png", class: "user-bad-img" %>
+  <% end %>
+<% elsif user_signed_in? && current_user.id != @article.user_id && @bad_evaluation %>
+  <%= link_to article_good_evaluations_path(@article), method: :post do %>
+    <%= image_tag "ungood.png", class: "user-good-img" %>
+  <% end %>
+  <%= link_to article_bad_evaluation_path(@article), method: :delete do %>
+    <%= image_tag "bad.png", class: "user-bad-img" %>
+  <% end %>
+<% elsif user_signed_in? && current_user.id != @article.user_id %>
+  <%= link_to article_good_evaluations_path(@article), method: :post do %>
+    <%= image_tag "ungood.png", class: "user-good-img" %>
+  <% end %>
+  <%= link_to article_bad_evaluations_path(@article), method: :post do %>
+    <%= image_tag "unbad.png", class: "user-bad-img" %>
+  <% end %>
+<% end %>
+
 <div class="article-show-content">
   <div class="article-cover-img">
   <% if @article.image.attached? %>

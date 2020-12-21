@@ -13,6 +13,8 @@
 - has_many :articles
 - has_many :comments
 - has_many :favorites
+- has_many :good_evaluations
+- has_many :bad_evaluations
 
 
 ## articlesテーブル
@@ -28,6 +30,8 @@
 - belongs_to :user
 - has_many :comments
 - has_many :favorites
+- has_many :good_evaluations
+- has_many :bad_evaluations
 
 
 ## commentsテーブル
@@ -45,6 +49,32 @@
 
 
 ## favoriteテーブル
+
+| Column  | Type       | Options           |
+|---------|------------|-------------------|
+| user    | references | foreign_key: true |
+| article | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
+
+
+## good_evaluationsテーブル
+
+| Column  | Type       | Options           |
+|---------|------------|-------------------|
+| user    | references | foreign_key: true |
+| article | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
+
+
+## bad_evaluationsテーブル
 
 | Column  | Type       | Options           |
 |---------|------------|-------------------|
