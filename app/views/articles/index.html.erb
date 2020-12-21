@@ -2,7 +2,7 @@
 
 <div class="top-page-main">
   <div class="page-title">
-    <h1>記事一覧</h1>
+    <h1>新規投稿記事一覧</h1>
   </div>
   <div class="top-page-index">
     <ul class="articles-lists">
@@ -39,7 +39,7 @@
             <i class="far fa-thumbs-down"></i>
           <% end %>
           <span class='star-count'><%= article.bad_evaluations.length %></span>
-
+          <p>カテゴリー：<%= article.category[:name]%></p>
         </li>
       <% end %>      
 
