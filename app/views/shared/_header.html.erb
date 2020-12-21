@@ -2,6 +2,14 @@
   <div class='header-left'>
     <%= link_to "PosticleApp", root_path, class: "header-logo" %>
   </div>
+
+  <div class='header-center'>
+    <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "記事を検索する", class: "search-input" %>
+      <%= f.submit "検索", class: "search-btn" %>  
+    <% end %>
+  </div>
+
   <div class='header-right'>
     <ul class='header-right-lists'>
     <% if user_signed_in? %>

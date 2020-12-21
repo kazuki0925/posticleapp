@@ -7,4 +7,11 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  def self.search(search)
+    if search != ""
+      Article.where('text LIKE(?) OR title LIKE(?)', "%#{search}%", "%#{search}%")
+    else
+      Article.all
+    end
+  end
 end
