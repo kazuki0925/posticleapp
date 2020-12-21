@@ -24,6 +24,8 @@ class ArticlesController < ApplicationController
     @comments = @article.comments.includes(:user)
     if user_signed_in?
     @favorite = Favorite.find_by(user_id: current_user.id, article_id: params[:id])
+    @good_evaluation = GoodEvaluation.find_by(user_id: current_user.id, article_id: params[:id])
+    @bad_evaluation = BadEvaluation.find_by(user_id: current_user.id, article_id: params[:id])
     end
   end
 

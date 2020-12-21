@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
+    resources :good_evaluations, only: [:create, :destroy]
+    resources :bad_evaluations, only: [:create, :destroy]
     collection do
       get 'search'
     end
