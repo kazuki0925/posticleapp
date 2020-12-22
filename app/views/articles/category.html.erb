@@ -1,0 +1,36 @@
+<%= render 'shared/header' %>
+
+<div class="page-title">
+  <h1>カテゴリ検索</h1>
+</div>
+
+<div class="contents row">
+  <% if @articles.length != 0 %>
+    <h1 class="search-result"><%= @articles.length %>件の記事</h1>
+    <ul class="articles-lists">
+      <% @articles.each do |article| %>
+        <li class="article-list">
+          <%= link_to article_path(article) do %>
+            <div class="article-image-content">
+              <% if article.image.attached? %>
+                <%= image_tag article.image, class: "article-image", alt: "article-image" %>
+              <% else %>
+                <%= image_tag "sample_img.jpg", class: "article-image", alt: "article-image" %>
+              <% end %>
+            </div>
+            <p class="article-title"><%= article.title %></p>
+          <% end %>
+          <p class="article-user">by <%= article.user.nickname %></p>
+          <% if user_signed_in? && Favorite.find_by(user_id: current_user.id, article_id: article.id) %> 
+            <i class="fas fa-star favorite"></i>
+          <% else %>
+            <i class="fas fa-star unfavorite"></i>
+          <% end %>
+          <span class='star-count'><%= article.favorites.length %></span>
+        </li>
+      <% end %> 
+    </ul>
+  <% else %>
+    <h1 class="search-result">検索結果が見つかりませんでした</h1>
+  <% end %>
+</div>

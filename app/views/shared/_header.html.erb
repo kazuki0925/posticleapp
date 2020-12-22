@@ -1,7 +1,16 @@
 <header class='top-page-header'>
   <div class='header-left'>
-    <%= image_tag "menu.png", id: "img-menu-icon" %>
+  <%= image_tag "menu.png", id: "img-menu-icon" %>
     <%= link_to "PosticleApp", root_path, class: "header-logo" %>
+  </div>
+
+  <div id="modal-menu" class="hidden">
+    <h2>カテゴリーから探す</h2>
+    <ul class="category-list">
+      <% Category.all.drop(1).each do |category| %>
+        <li><%= link_to "#{category[:name]}", "/articles/#{category[:id]}/category", class: "category-link" %></li>
+      <% end %>
+    </ul>
   </div>
 
   <div class='header-center'>
