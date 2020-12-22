@@ -11,7 +11,38 @@
 }
 
 .header-left {
-  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#img-menu-icon {
+  height: 50px;
+  padding: 0 20px;
+}
+
+#modal-menu {
+  position: fixed;
+  top: 90px;
+  left: 0px;
+  font-size: 20px;
+  background-color: #191970;
+  opacity: 0.8;
+  color: white;
+  padding: 10px;
+}
+
+#modal-menu h2{
+  font-weight: bold;
+  border-bottom: 1px solid white;
+}
+
+.category-list li {
+  padding-bottom: 5px;
+}
+
+.category-link {
+  color: white;
 }
 
 .header-logo {

@@ -17,14 +17,18 @@
       <%= f.file_field :image, id: "cover-img-select", class: "hidden" %>
     </label>
 
-
     <div class="new-articles">
-      <div class="article-title">
+      <div class="new-article-title">
         <p>タイトル</p>
         <%= f.text_field :title, class:"input-article-title", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
       </div>
 
-      <div class="article-text">
+      <div class="new-article-category">
+        <p>カテゴリ(任意)</p>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+      </div>
+
+      <div class="new-article-text">
         <p>本文</p>
         <%= f.text_area :text, class:"input-article-text", placeholder:"本文", rows:"20", maxlength:"15000", wrap:"soft" %>
       </div>

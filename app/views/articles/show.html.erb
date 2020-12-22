@@ -63,14 +63,14 @@
       <% if user_signed_in? %>
         <div class="comment-content-form">
           <%= form_with model: @comment, url: article_comments_path(@article), local: true do |f| %>
-            <h2>コメントフォーム</h2>
+            <h2>この記事に対するコメントを書く</h2>
             <%= f.text_area :text, class:"input-article-comment", placeholder:"コメントを入力", rows:"5", maxlength:"250", wrap:"soft"%>
             <%= f.submit "コメントを送信", class:"comment-submit-btn" %>
           <% end %>
         </div>
       <% end %>
 
-      <% if @comments %>
+      <% if @comments.length != 0 %>
         <h2 class="comment-title">コメント</h2>
         <ul class=comment-lists>
           <% @comments.each do |comment| %>

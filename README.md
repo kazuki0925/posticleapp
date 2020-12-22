@@ -24,6 +24,7 @@
 | title                 | string     | null: false       |
 | text                  | text       | null: false       |
 | user                  | references | foreign_key: true |
+| category_id           | integer    | null: false       |
 
 ### Association
 
