@@ -50,6 +50,7 @@ class ArticlesController < ApplicationController
   end
 
   def category
+    @num = params[:id].to_i
     @article = Article.find_by(category_id: params[:id])
     @articles = Article.where(category_id: params[:id]).order("created_at DESC")
   end

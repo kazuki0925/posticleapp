@@ -23,29 +23,7 @@
   <div class="user-articles-content">
     <h2><%= current_user.nickname %>さんが投稿した記事</h2>
       <% if current_user.articles.length != 0 %>
-        <ul class="articles-lists">
-          <% current_user.articles.each do |article| %>
-            <li class="article-list">
-              <%= link_to article_path(article) do %>
-                <div class="article-image-content">
-                  <% if article.image.attached? %>
-                    <%= image_tag article.image, class: "article-image", alt: "article-image" %>
-                  <% else %>
-                    <%= image_tag "sample_img.jpg", class: "article-image", alt: "article-image" %>
-                  <% end %>
-                </div>
-                <p class="article-title"><%= article.title %></p>
-              <% end %>
-              <p class="article-user">by <%= article.user.nickname %></p>
-              <% if user_signed_in? && Favorite.find_by(user_id: current_user.id, article_id: article.id) %> 
-                <i class="fas fa-star favorite"></i>
-              <% else %>
-                <i class="fas fa-star unfavorite"></i>
-              <% end %>
-              <span class='star-count'><%= article.favorites.length %></span>
-            </li>
-          <% end %>
-        </ul>
+        <%= render partial: 'shared/article_contents', locals: {articles: current_user.articles} %>
       <% else %>
         <p>現在投稿された記事はありません</p>
       <% end %>
@@ -54,23 +32,7 @@
   <div class="user-articles-content">
     <h2><%= current_user.nickname %>さんがお気に入りした記事</h2>
       <% if @favorites.length != 0 %>
-        <ul class="articles-lists">
-          <% @favorites.each do |favorite| %>
-            <li class="article-list">
-              <%= link_to article_path(favorite.article) do %>
-                <div class="article-image-content">
-                  <% if favorite.article.image.attached? %>
-                    <%= image_tag favorite.article.image, class: "article-image", alt: "article-image" %>
-                  <% else %>
-                    <%= image_tag "sample_img.jpg", class: "article-image", alt: "article-image" %>
-                  <% end %>
-                </div>
-                <p class="article-title"><%= favorite.article.title %></p>
-              <% end %>
-              <p class="article-user">by <%= favorite.article.user.nickname %></p>
-            </li>
-          <% end %>
-        </ul>
+        <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
       <% else %>
         <p>お気に入りした記事はありません</p>
       <% end %>
