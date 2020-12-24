@@ -4,6 +4,18 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:user).order("created_at DESC")
+    @favorite_articles = Article.find(Favorite.group(:article_id).order('count(article_id) DESC').pluck(:article_id))
+    articles_evaluation = []
+    @articles.each do |article|
+      if article.good_evaluations.length + article.bad_evaluations.length != 0
+        article_evaluation = 100 * article.good_evaluations.length / (article.good_evaluations.length + article.bad_evaluations.length)
+        articles_evaluation << {score: article_evaluation, count: article.good_evaluations.length, name: article}
+      else
+        article_evaluation = 0
+        articles_evaluation << {score: article_evaluation, count: article.good_evaluations.length, name: article}
+      end
+    end
+    @good_articles = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
   end
 
   def new
