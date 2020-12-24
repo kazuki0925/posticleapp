@@ -7,38 +7,13 @@
   <%= link_to article_path(@article), method: :delete do %>
     <%= image_tag "delete_img.png", class: "user-delete-img" %>
   <% end %>
-<% elsif user_signed_in? && @favorite %>
-  <%= link_to article_favorite_path(@article), method: :delete do %>
-    <%= image_tag "favorite.png", class: "user-favorite-img" %>
-  <% end %>
-<% elsif user_signed_in? %>
-  <%= link_to article_favorites_path(@article), method: :post do %>
-    <%= image_tag "unfavorite.png", class: "user-favorite-img" %>
-  <% end %>
 <% end %>
 
-<% if user_signed_in? && current_user.id != @article.user_id && @good_evaluation %>
-  <%= link_to article_good_evaluation_path(@article), method: :delete do %>
-    <%= image_tag "good.png", class: "user-good-img" %>
-  <% end %>
-  <%= link_to article_bad_evaluations_path(@article), method: :post do %>
-    <%= image_tag "unbad.png", class: "user-bad-img" %>
-  <% end %>
-<% elsif user_signed_in? && current_user.id != @article.user_id && @bad_evaluation %>
-  <%= link_to article_good_evaluations_path(@article), method: :post do %>
-    <%= image_tag "ungood.png", class: "user-good-img" %>
-  <% end %>
-  <%= link_to article_bad_evaluation_path(@article), method: :delete do %>
-    <%= image_tag "bad.png", class: "user-bad-img" %>
-  <% end %>
-<% elsif user_signed_in? && current_user.id != @article.user_id %>
-  <%= link_to article_good_evaluations_path(@article), method: :post do %>
-    <%= image_tag "ungood.png", class: "user-good-img" %>
-  <% end %>
-  <%= link_to article_bad_evaluations_path(@article), method: :post do %>
-    <%= image_tag "unbad.png", class: "user-bad-img" %>
-  <% end %>
-<% end %>
+<%= render partial: "favorites/favorite_btn", locals: { article: @article, favorite: @favorite} %>
+
+<%= render partial: "good_evaluations/good_btn", locals: { article: @article, good_evaluation: @good_evaluation} %>
+
+<%= render partial: "bad_evaluations/bad_btn", locals: { article: @article, bad_evaluation: @bad_evaluation} %>
 
 <div class="article-show-content">
   <div class="article-cover-img">

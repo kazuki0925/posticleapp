@@ -1,0 +1,1 @@
+$('.favorites').html("<%= escape_javascript(render partial: "favorites/favorite_btn", locals: { article: @article, favorite: @favorite}) %>");

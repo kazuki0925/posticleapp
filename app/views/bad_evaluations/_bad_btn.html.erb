@@ -1,0 +1,13 @@
+<div class="bads">
+  <% if user_signed_in? && current_user.id != article.user_id %>
+    <% if current_user.bad_by?(article.id) %>
+      <%= link_to "/articles/#{article.id}/bad_evaluations/#{bad_evaluation.id}", method: :delete, remote: true do %>
+        <%= image_tag "bad.png", class: "user-bad-img" %>
+      <% end %>
+    <% else %>
+      <%= link_to "/articles/#{article.id}/bad_evaluations", method: :post, remote: true do %>
+        <%= image_tag "unbad.png", class: "user-bad-img" %>
+      <% end %>
+    <%end%>
+  <% end %>
+</div>

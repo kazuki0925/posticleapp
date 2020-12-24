@@ -3,19 +3,16 @@ class BadEvaluationsController < ApplicationController
   before_action :set_article, only: [:create, :destroy]
 
   def create
-    @bad_evaluation = BadEvaluation.new(user_id: current_user.id, article_id: params[:article_id])
-    @bad_evaluation.save
+    @bad_evaluation = BadEvaluation.create(user_id: current_user.id, article_id: params[:article_id])
     if GoodEvaluation.find_by(user_id: current_user.id, article_id: params[:article_id])
-    @good_evaluation = GoodEvaluation.find_by(user_id: current_user.id, article_id: params[:article_id])
-    @good_evaluation.destroy
+      @good_evaluation = GoodEvaluation.find_by(user_id: current_user.id, article_id: params[:article_id])
+      @good_evaluation.destroy
     end
-    redirect_to article_path(@article)
   end
 
   def destroy
     @bad_evaluation = BadEvaluation.find_by(user_id: current_user.id, article_id: params[:article_id])
     @bad_evaluation.destroy
-    redirect_to article_path(@article)
   end
 
   private

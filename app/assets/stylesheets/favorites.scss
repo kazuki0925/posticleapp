@@ -1,3 +1,19 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favorite-off {
+  font-size: 70px;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  color: gray;
+}
+
+.favorite-on {
+  font-size: 70px;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  color: yellow;
+}
