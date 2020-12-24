@@ -1,0 +1,2 @@
+$('.bads').html("<%= escape_javascript(render partial: "bad_evaluations/bad_btn", locals: { article: @article, bad_evaluation: @bad_evaluation}) %>");
+$('.goods').html("<%= escape_javascript(render partial: "good_evaluations/good_btn", locals: { article: @article, good_evaluation: @good_evaluation}) %>");

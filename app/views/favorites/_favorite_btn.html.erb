@@ -1,0 +1,14 @@
+<div class="favorites">
+  <% if user_signed_in? && current_user.id != article.user_id %> 
+    <% if current_user.favorite_by?(article.id) %>
+      <%= link_to "/articles/#{article.id}/favorites/#{favorite.id}", method: :delete, remote: true do %>
+        <i class="fas fa-star favorite-on"></i>
+      <% end %>
+    <% else %>
+      <%= link_to "/articles/#{article.id}/favorites", method: :post, remote: true do %>
+        <i class="fas fa-star favorite-off"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+

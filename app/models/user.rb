@@ -11,4 +11,17 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :good_evaluations, dependent: :destroy
   has_many :bad_evaluations, dependent: :destroy
+
+  def favorite_by?(article_id)
+    favorites.where(article_id: article_id).exists?
+  end
+
+  def good_by?(article_id)
+    good_evaluations.where(article_id: article_id).exists?
+  end
+
+  def bad_by?(article_id)
+    bad_evaluations.where(article_id: article_id).exists?
+  end
+
 end
