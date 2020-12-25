@@ -10,7 +10,9 @@ class Category < ActiveHash::Base
     { id: 7, name: 'スポーツ' },
     { id: 8, name: 'グルメ' },
     { id: 9, name: '趣味' },
-    { id: 10, name: 'その他' }
+    { id: 10, name: '音楽' },
+    { id: 11, name: 'ゲーム・ホビー' },
+    { id: 12, name: 'その他' }
   ]
 
   include ActiveHash::Associations

@@ -10,55 +10,53 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 100vw;
+  width: 70vw;
+  margin: 0 auto;
 }
 
 .article-list {
-  background-color: #f5f5f5;
-  border: 1px solid gray;
+  background-color: white;
+  border: 1px solid lightgray;
   border-radius: 5px;
   overflow: hidden;
   width: calc((100% - 50px) / 3);
+  min-width: 300px;
+  max-height: 350px;
   height: auto;
   margin-bottom: 10px;
 }
 
 .article-image-content {
-  height: 60%;
+  width: 100%;
+  max-height: 200px;
+  height: auto;
   overflow: hidden;
 }
 
 .article-image {
   width: 100%;
 }
-
-.article-new-btn {
-  height: 130px;
-  width: 130px;
-  position: fixed;
-  bottom: 40px;
-  left: 30px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  opacity: 0.8;
+.article-title {
+  height: 90px;
+  padding: 0 10px;
+  text-align: center;
 }
 
-.article-new-text {
-  font-size: 23px;
-  position: fixed;
-  bottom: 138px;
-  left: 45px;
-  font-family: 'Londrina Shadow', cursive;
-  font-weight: bold;
-  color: rgb(58, 171, 210);
-
+.article-middle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
-.article-new-img {
-  height: 100px;
-  position: fixed;
-  bottom: 40px;
-  left: 50px;
+.article-category {
+  padding: 0 10px;
+}
+
+.fa-star,
+.fa-thumbs-up,
+.fa-thumbs-down,
+.count-num {
+  font-size: 20px;
 }
 
 .favorite {
@@ -69,6 +67,34 @@
   color: gray;
 }
 
+.article-new-btn {
+  height: 130px;
+  width: 130px;
+  position: fixed;
+  top: 125px;
+  right: 40px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.8;
+}
+
+.article-new-text {
+  font-size: 23px;
+  position: fixed;
+  top: 130px;
+  right: 55px;
+  font-family: 'Londrina Shadow', cursive;
+  font-weight: bold;
+  color: rgb(58, 171, 210);
+
+}
+
+.article-new-img {
+  height: 100px;
+  position: fixed;
+  top: 150px;
+  right: 50px;
+}
 // new.html.erbの新規記事投稿画面
 .img-select-btn {
   height: 130px;
@@ -102,10 +128,24 @@
   width: 80vw;
   margin: 0 auto;
 }
+
+.new-article-title p{
+  font-size: 25px;
+}
+
 .input-article-title {
   width: 100%;
   padding: 0 5px;
 }
+
+.new-article-category p{
+  font-size: 25px;
+}
+
+.new-article-text p{
+  font-size: 25px;
+}
+
 .input-article-text {
   width: 100%;
   padding: 0 5px;
@@ -194,5 +234,6 @@
 
 // 記事検索結果画面
 .search-result {
-  padding: 10px;
+  font-size: 25px;
+  padding: 0 30px 10px;
 }

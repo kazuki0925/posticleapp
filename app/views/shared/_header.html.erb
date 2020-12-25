@@ -21,7 +21,17 @@
   </div>
 
   <div class='header-right'>
-    <ul class='header-right-lists'>
+    <%= image_tag "search.png", id: "search-image" %>
+    <div class="search-modal">
+        <div class="modal-bg search-modal-close"></div>
+        <div class="search-modal-content">
+          <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
+            <%= f.text_field :keyword, placeholder: "記事を検索する", class: "search-input" %>
+            <%= f.submit "検索", class: "search-btn" %>  
+          <% end %>
+            <p class="search-modal-close">閉じる</p>
+        </div>
+    </div>
     <% if user_signed_in? %>
       <%= link_to current_user.nickname, user_path(current_user), class: 'header-right-list' %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header-right-list' %>
@@ -29,6 +39,5 @@
       <%= link_to "ログイン", new_user_session_path, class: 'header-right-list' %>
       <%= link_to "新規登録", new_user_registration_path, class: 'header-right-list' %>
     <% end %>
-    </ul>
   </div>
 </header>

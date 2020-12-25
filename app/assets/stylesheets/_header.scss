@@ -19,6 +19,7 @@
 #img-menu-icon {
   height: 50px;
   padding: 0 20px;
+  cursor: pointer;
 }
 
 #modal-menu {
@@ -30,6 +31,8 @@
   opacity: 0.8;
   color: white;
   padding: 10px;
+  height: 600px;
+  width: 220px;
 }
 
 #modal-menu h2{
@@ -38,7 +41,7 @@
 }
 
 .category-list li {
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 .category-link {
@@ -52,7 +55,7 @@
   font-family: 'Londrina Shadow', cursive;
 }
 
-.header-right-lists {
+.header-right {
   display: flex;
 }
 
@@ -64,14 +67,107 @@
 }
 
 .search-input {
-  width: 500px;
-  height: 50px;
+  width: 450px;
+  height: 45px;
   border-radius: 30px;
   padding-left: 10px;
+  border: 1px solid gray;
 }
 
 .search-btn {
-  width: 100px;
-  height: 50px;
+  width: 90px;
+  height: 45px;
   border-radius: 30px;
+  border: 1px solid gray;
+}
+
+#search-image {
+  display: none;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+  .top-page-header {
+    height: 70px;
+  }
+    
+  #img-menu-icon {
+    height: 40px;
+  }
+  
+  #modal-menu {
+    top: 70px;
+  }
+
+  .header-logo {
+    font-size: 35px;
+  }
+
+  #search-image {
+    display: block;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .search-modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.modal-bg{
+    background: rgba(0,0,0,0.7);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.search-modal-content{
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+  
+  .header-right-list {
+    font-size: 18px;
+  }
+  
+  .header-center {
+    display: none;
+  }
+
+  .search-input {
+    position: fixed;
+    top:calc(50% - 45px/2);
+    left:calc(50% - 450px/2);
+    z-index: 50;
+    width: 450px;
+    height: 45px;
+    border-radius: 30px;
+  }
+  
+  .search-btn {
+    width: 90px;
+    height: 45px;
+    border-radius: 30px;
+    position: fixed;
+    top:calc(50% + 45px);
+    left:calc(50% - 90px/2);
+    z-index: 50;
+  }
+  
+
+  .search-input {
+    width: 450px;
+    height: 45px;
+  }
+  
+  .search-btn {
+    width: 90px;
+    height: 45px;
+  }
 }

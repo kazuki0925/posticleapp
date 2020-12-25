@@ -6,7 +6,6 @@
 
 <div class="contents row">
   <% if @articles.length != 0 %>
-    <h1 class="search-result"><%= @articles.length %>件の記事</h1>
     <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
   <% else %>
     <h1 class="search-result"><%= Category.data[@num][:name] %>に該当する記事は見つかりませんでした。</h1>
