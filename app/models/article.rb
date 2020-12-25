@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
-  validates :title, presence: true
-  validates :text, presence: true
+  with_options presence: true do
+    validates :title, length: { maximum: 40 }
+    validates :text, length: { maximum: 15000 }
+  end  
 
   belongs_to :user
   has_one_attached :image

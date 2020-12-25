@@ -23,6 +23,7 @@
 }
 
 #modal-menu {
+  display: none;
   position: fixed;
   top: 90px;
   left: 0px;
@@ -82,6 +83,10 @@
 }
 
 #search-image {
+  display: none;
+}
+
+.search-modal {
   display: none;
 }
 
