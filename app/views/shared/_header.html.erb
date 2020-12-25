@@ -4,7 +4,7 @@
     <%= link_to "PosticleApp", root_path, class: "header-logo" %>
   </div>
 
-  <div id="modal-menu" class="hidden">
+  <div id="modal-menu">
     <h2>カテゴリーから探す</h2>
     <ul class="category-list">
       <% Category.all.drop(1).each do |category| %>
@@ -29,7 +29,6 @@
             <%= f.text_field :keyword, placeholder: "記事を検索する", class: "search-input" %>
             <%= f.submit "検索", class: "search-btn" %>  
           <% end %>
-            <p class="search-modal-close">閉じる</p>
         </div>
     </div>
     <% if user_signed_in? %>

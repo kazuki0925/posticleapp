@@ -5,9 +5,17 @@
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .second-header-center{
-  text-align: center;
-  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .second-header {
+    height: 70px;
+  }
 }
