@@ -86,3 +86,14 @@
 
 - belongs_to :user
 - belongs_to :article
+
+
+## relationshipsテーブル
+
+| Column  | Type       | Options                       |
+|---------|------------|-------------------------------|
+| user    | references | foreign_key: true             |
+| follow  | references | foreign_key:{to_table: users} |
+
+### Association
+- belongs_to :user

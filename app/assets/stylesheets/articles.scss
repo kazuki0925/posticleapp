@@ -6,67 +6,6 @@
   width: 100vw;
 }
 // index.html.erbの記事一覧
-.articles-lists {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 70vw;
-  margin: 0 auto;
-}
-
-.article-list {
-  background-color: white;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  overflow: hidden;
-  width: calc((100% - 50px) / 3);
-  min-width: 300px;
-  max-height: 350px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.article-image-content {
-  width: 100%;
-  max-height: 200px;
-  height: auto;
-  overflow: hidden;
-}
-
-.article-image {
-  width: 100%;
-}
-.article-title {
-  height: 90px;
-  padding: 0 10px;
-  text-align: center;
-}
-
-.article-middle {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.article-category {
-  padding: 0 10px;
-}
-
-.fa-star,
-.fa-thumbs-up,
-.fa-thumbs-down,
-.count-num {
-  font-size: 20px;
-}
-
-.favorite {
-  color: gold;
-}
-
-.unfavorite {
-  color: gray;
-}
-
 .article-new-btn {
   height: 130px;
   width: 130px;
@@ -95,6 +34,7 @@
   top: 150px;
   right: 50px;
 }
+
 // new.html.erbの新規記事投稿画面
 .img-select-btn {
   height: 130px;

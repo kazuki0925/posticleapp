@@ -1,0 +1,11 @@
+$('#new_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @new_articles}) %>");
+$('#new_articles_page_btn').html("<%= escape_javascript(paginate @new_articles, param_name: "new_articles_page", remote: true) %>");
+
+$('#favorite_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @favorite_articles}) %>");
+$('#favorite_articles_page_btn').html("<%= escape_javascript(paginate @favorite_articles, param_name: "favorite_articles_page", remote: true) %>");
+
+$('#good_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @good_articles}) %>");
+$('#good_articles_page_btn').html("<%= escape_javascript(paginate @good_articles, param_name: "good_articles_page", remote: true) %>");
+
+$('#follow_users_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @follow_users_articles}) %>");
+$('#follow_users_articles_page_btn').html("<%= escape_javascript(paginate @follow_users_articles, param_name: "follow_users_articles_page", remote: true) %>");

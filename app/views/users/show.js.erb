@@ -1,0 +1,5 @@
+$('#user_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @user_articles}) %>");
+$('#user_articles_page_btn').html("<%= escape_javascript(paginate @user_articles, param_name: "user_articles_page", remote: true) %>");
+
+$('#favorite_articles_page').html("<%= escape_javascript(render partial: 'shared/article_contents', locals: {articles: @favorite_articles}) %>");
+$('#favorite_articles_page_btn').html("<%= escape_javascript(paginate @favorite_articles, param_name: "favorite_articles_page", remote: true) %>");

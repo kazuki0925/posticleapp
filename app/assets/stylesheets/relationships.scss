@@ -1,0 +1,23 @@
+// Place all the styles related to the relationships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.follows {
+  text-align: center;
+}
+.follow-btn {
+  height: 50px;
+  width: 120px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.follow {
+  font-weight: bold;
+  color: white;
+  background-color: #191970;
+}
+
+.unfollow {
+  font-weight: bold;
+  background-color: white;
+}
