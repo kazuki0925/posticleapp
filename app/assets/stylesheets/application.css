@@ -56,6 +56,10 @@ p {
   background-color:rgba(0,0,0,0.50);
 }
 
+.non-message {
+  text-align: center;
+}
+
  /* タブレット表示時 */
 @media (max-width: 1024px) {
   p {

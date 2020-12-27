@@ -32,7 +32,7 @@
           <%= paginate @user_articles, param_name: "user_articles_page", remote: true %>
         </div>
       <% else %>
-        <p>投稿された記事はありません</p>
+        <p class="non-message">投稿された記事はありません</p>
       <% end %>
   </div>
 
@@ -47,7 +47,7 @@
           <%= paginate @favorite_articles, param_name: "favorite_articles_page", remote: true %>
         </div>
       <% else %>
-        <p>お気に入りした記事はありません</p>
+        <p class="non-message">お気に入りした記事はありません</p>
       <% end %>
   <% end %>
   </div>

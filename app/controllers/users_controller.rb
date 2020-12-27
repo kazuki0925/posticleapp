@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
+
   def show
     @user = User.find(params[:id])
     @user_articles = Kaminari.paginate_array(@user.articles).page(params[:user_articles_page]).per(3)

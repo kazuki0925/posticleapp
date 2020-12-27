@@ -19,14 +19,16 @@ class ArticlesController < ApplicationController
     end
     @goods = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
     @good_articles = Kaminari.paginate_array(@goods).page(params[:good_articles_page]).per(3)
-    follow_users = current_user.followings
-    follow_users_articles = []
-    follow_users.each do |follow_user|
-      follow_user.articles.each do |follow_user_article|
-        follow_users_articles << follow_user_article
+    if user_signed_in?
+      follow_users = current_user.followings
+      follow_users_articles = []
+      follow_users.each do |follow_user|
+        follow_user.articles.each do |follow_user_article|
+          follow_users_articles << follow_user_article
+        end
       end
+      @follow_users_articles = Kaminari.paginate_array(follow_users_articles).page(params[:follow_users_articles_page]).per(3)
     end
-    @follow_users_articles = Kaminari.paginate_array(follow_users_articles).page(params[:follow_users_articles_page]).per(3)
   end
 
   def new
