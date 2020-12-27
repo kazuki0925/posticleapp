@@ -4,7 +4,7 @@
   <h1>カテゴリ：<%= Category.data[@num][:name] %></h1>
 </div>
 
-<div class="contents row">
+<div class="search-result-index">
   <% if @articles.length != 0 %>
     <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
   <% else %>

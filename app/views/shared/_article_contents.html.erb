@@ -9,11 +9,11 @@
             <%= image_tag "sample_img.jpg", class: "article-image", alt: "article-image" %>
           <% end %>
         </div>
-        <p class="article-title"><%= article.title %></p>
+        <p class="article-title"><%= article.title.truncate(28) %></p>
       <% end %>
 
       <div class="article-middle">
-        <p class="article-user">by <%= article.user.nickname %></p>
+        <p class="article-user"><%= link_to "by #{article.user.nickname}", user_path(article.user) %></p>
         <div class="article-icon">
           <% if user_signed_in? && Favorite.find_by(user_id: current_user.id, article_id: article.id) %> 
             <i class="fas fa-star favorite"></i>

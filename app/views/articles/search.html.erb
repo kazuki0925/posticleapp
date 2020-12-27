@@ -4,7 +4,7 @@
   <h1>検索結果</h1>
 </div>
 
-<div class="contents row">
+<div class="search-result-index">
   <% if @articles.length != 0 %>
     <h1 class="search-result"><%= @articles.length %>件ヒットしました。</h1>
     <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>

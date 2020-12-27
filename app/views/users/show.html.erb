@@ -2,40 +2,54 @@
 
 <div class="user-show-content">
   <div class="page-title">
-    <h1><%= current_user.nickname %>さんのマイページ</h1>
+    <h1><%= @user.nickname %>さんのページ</h1>
   </div>
 
+  <% if @user.id == current_user.id %>
   <div class="user-profile">
     <h2 class="table-name">ユーザー情報</h2>
-
     <div class="user-profile-list">
       <h2>ニックネーム</h2>
-      <p><%= current_user.nickname %></p>
+      <p><%= @user.nickname %></p>
     </div>
 
     <div class="user-profile-list">
       <h2>メールアドレス</h2>
-      <p><%= current_user.email %></p>
+      <p><%= @user.email %></p>
     </div>
-
   </div>
+  <% else %>
+    <%= render partial: "relationships/follow_btn", locals: {user: @user} %>
+  <% end %>
 
   <div class="user-articles-content">
-    <h2><%= current_user.nickname %>さんが投稿した記事</h2>
-      <% if current_user.articles.length != 0 %>
-        <%= render partial: 'shared/article_contents', locals: {articles: current_user.articles} %>
+    <h2><%= @user.nickname %>さんが投稿した記事</h2>
+      <% if @user_articles.length != 0 %>
+        <div class="top-page-index" id="user_articles_page">
+          <%= render partial: 'shared/article_contents', locals: {articles: @user_articles} %>
+        </div>
+        <div id="user_articles_page_btn">
+          <%= paginate @user_articles, param_name: "user_articles_page", remote: true %>
+        </div>
       <% else %>
-        <p>現在投稿された記事はありません</p>
+        <p class="non-message">投稿された記事はありません</p>
       <% end %>
   </div>
 
+  <% if @user.id == current_user.id %>
   <div class="user-articles-content">
-    <h2><%= current_user.nickname %>さんがお気に入りした記事</h2>
-      <% if @favorites.length != 0 %>
-        <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
+    <h2><%= @user.nickname %>さんがお気に入りした記事</h2>
+      <% if @favorite_articles.length != 0 %>
+        <div class="top-page-index" id="favorite_articles_page">
+          <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
+        </div>
+        <div id="favorite_articles_page_btn">
+          <%= paginate @favorite_articles, param_name: "favorite_articles_page", remote: true %>
+        </div>
       <% else %>
-        <p>お気に入りした記事はありません</p>
+        <p class="non-message">お気に入りした記事はありません</p>
       <% end %>
+  <% end %>
   </div>
 </div>
 
