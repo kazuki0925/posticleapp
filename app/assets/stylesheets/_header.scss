@@ -1,4 +1,4 @@
-.top-page-header {
+header {
   height: 90px;
   width: 100vw;
   background-color: #191970;
@@ -56,6 +56,11 @@
   font-family: 'Londrina Shadow', cursive;
 }
 
+.header-logo:hover{
+  text-decoration: none;
+  color: white;
+}
+
 .header-right {
   display: flex;
 }
@@ -92,7 +97,7 @@
 
  /* タブレット表示時 */
  @media (max-width: 1024px) {
-  .top-page-header {
+  header {
     height: 70px;
   }
     

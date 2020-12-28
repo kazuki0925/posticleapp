@@ -1,0 +1,29 @@
+footer {
+  height: 200px;
+  width: 100vw;
+  background-color: #191970;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-list {
+  color: white;
+  font-size: 20px;
+}
+
+.footer-title {
+  border-bottom: solid 1px white;
+}
+.footer-list li{
+  margin-bottom: 10px;
+}
+
+.app-link {
+  height: 50px;
+}
+
+.footer-icon {
+  font-size: 50px;
+  margin-left: 7px;
+}
