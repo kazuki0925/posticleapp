@@ -7,6 +7,10 @@ class CommentsController < ApplicationController
       redirect_to article_path(@comment.article.id)
     else
       @article = Article.find(params[:article_id])
+      @favorite = Favorite.find_by(user_id: current_user.id, article_id: @article.id)
+      @good_evaluation = GoodEvaluation.find_by(user_id: current_user.id, article_id: @article.id)
+      @bad_evaluation = BadEvaluation.find_by(user_id: current_user.id, article_id: @article.id)  
+      @comments = Comment.all
       render "articles/show"
     end
   end
