@@ -5,7 +5,7 @@
   </div>
 
   <div id="modal-menu">
-    <h2>カテゴリーから探す</h2>
+    <h3>カテゴリーから探す</h3>
     <ul class="category-list">
       <% Category.all.drop(1).each do |category| %>
         <li><%= link_to "#{category[:name]}", "/articles/#{category[:id]}/category", class: "category-link" %></li>

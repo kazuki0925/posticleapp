@@ -8,6 +8,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .header-left {
@@ -36,9 +37,10 @@ header {
   width: 220px;
 }
 
-#modal-menu h2{
+#modal-menu h3{
   font-weight: bold;
   border-bottom: 1px solid white;
+  margin-bottom: 5px;
 }
 
 .category-list li {
@@ -127,18 +129,21 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 2;
   }
   .modal-bg{
       background: rgba(0,0,0,0.7);
       height: 100vh;
       position: absolute;
       width: 100%;
+      z-index: 2;
   }
   .search-modal-content{
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%,-50%);
+      z-index: 2;
   }
 
   .header-right-list {
@@ -169,13 +174,4 @@ header {
     z-index: 50;
   }
 
-  .search-input {
-    width: 450px;
-    height: 45px;
-  }
-
-  .search-btn {
-    width: 90px;
-    height: 45px;
-  }
 }

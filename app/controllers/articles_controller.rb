@@ -8,15 +8,7 @@ class ArticlesController < ApplicationController
     @favorites = Article.find(Favorite.group(:article_id).order('count(article_id) DESC').pluck(:article_id))
     @favorite_articles = Kaminari.paginate_array(@favorites).page(params[:favorite_articles_page]).per(3)
     articles_evaluation = []
-    @articles.each do |article|
-      if article.good_evaluations.length + article.bad_evaluations.length != 0
-        article_evaluation = 100 * article.good_evaluations.length / (article.good_evaluations.length + article.bad_evaluations.length)
-        articles_evaluation << {score: article_evaluation, count: article.good_evaluations.length, name: article}
-      else
-        article_evaluation = 0
-        articles_evaluation << {score: article_evaluation, count: article.good_evaluations.length, name: article}
-      end
-    end
+    Article.evaluation(articles_evaluation, @articles)
     @goods = articles_evaluation.sort_by{ |a| -a[:score] }.sort_by{ |a| -a[:count] }.pluck(:name)
     @good_articles = Kaminari.paginate_array(@goods).page(params[:good_articles_page]).per(3)
     if user_signed_in?
@@ -38,8 +30,10 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
+      flash[:success] = '記事を投稿しました'
       redirect_to root_path
     else
+      flash.now[:alert] = '記事の投稿に失敗しました'
       render :new
     end
   end
@@ -59,14 +53,17 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      flash[:success] = '記事を更新しました'
       redirect_to article_path(@article) 
     else
+      flash.now[:alert] = '記事の更新に失敗しました'
       render :edit
     end
   end
 
   def destroy
     @article.destroy
+    flash[:success] = '記事を削除しました'
     redirect_to root_path
   end
 

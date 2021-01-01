@@ -1,56 +1,52 @@
-<%= render 'shared/header' %>
-
-<div class="top-page-main">
-  <div class="page-title">
-    <h1>新規投稿記事</h1>
-  </div>
-  <div class="top-page-index" id="new_articles_page">
-    <%= render partial: 'shared/article_contents', locals: {articles: @new_articles} %>
-  </div>
-  <div id="new_articles_page_btn">
-    <%= paginate @new_articles, param_name: "new_articles_page", remote: true %>
-  </div>
-
-  <div class="page-title">
-    <h1>人気記事</h1>
-  </div>
-  <div class="top-page-index" id="favorite_articles_page">
-    <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
-  </div>
-  <div id="favorite_articles_page_btn">
-    <%= paginate @favorite_articles, param_name: "favorite_articles_page", remote: true %>
-  </div>
-
-  <div class="page-title">
-    <h1>評価の高い記事</h1>
-  </div>
-  <div class="top-page-index" id="good_articles_page">
-    <%= render partial: 'shared/article_contents', locals: {articles: @good_articles} %>
-  </div>
-  <div id="good_articles_page_btn">
-    <%= paginate @good_articles, param_name: "good_articles_page", remote: true %>
-  </div>
-
-  <% if user_signed_in? %>
-    <div class="page-title">
-      <h1>フォローしているユーザーの記事</h1>
-    </div>
-    <% if @follow_users_articles.length != 0 %>
-      <div class="top-page-index" id="follow_users_articles_page">
-        <%= render partial: 'shared/article_contents', locals: {articles: @follow_users_articles} %>
-      </div>
-      <div id="follow_users_articles_page_btn">
-        <%= paginate @follow_users_articles, param_name: "follow_users_articles_page", remote: true %>
-      </div>
-    <% else %>
-      <p class="non-message">現在フォローしているユーザーはいません</p>
-    <% end %>
-  <% end %>
-
-  <%= link_to new_article_path do %>
-  <div class="article-new-btn">
-  <%= image_tag "article_new.png", class: "article-new-img", alt: "article-new-image" %>
-  <p class="article-new-text">New Article</p>
-  </div>
-  <% end %>
+<div class="page-title">
+  <h1>新規投稿記事</h1>
 </div>
+<div class="top-page-index" id="new_articles_page">
+  <%= render partial: 'shared/article_contents', locals: {articles: @new_articles} %>
+</div>
+<div id="new_articles_page_btn">
+  <%= paginate @new_articles, param_name: "new_articles_page", remote: true %>
+</div>
+
+<div class="page-title">
+  <h1>人気記事</h1>
+</div>
+<div class="top-page-index" id="favorite_articles_page">
+  <%= render partial: 'shared/article_contents', locals: {articles: @favorite_articles} %>
+</div>
+<div id="favorite_articles_page_btn">
+  <%= paginate @favorite_articles, param_name: "favorite_articles_page", remote: true %>
+</div>
+
+<div class="page-title">
+  <h1>評価の高い記事</h1>
+</div>
+<div class="top-page-index" id="good_articles_page">
+  <%= render partial: 'shared/article_contents', locals: {articles: @good_articles} %>
+</div>
+<div id="good_articles_page_btn">
+  <%= paginate @good_articles, param_name: "good_articles_page", remote: true %>
+</div>
+
+<% if user_signed_in? %>
+  <div class="page-title">
+    <h1>フォローしているユーザーの記事</h1>
+  </div>
+  <% if @follow_users_articles.length != 0 %>
+    <div class="top-page-index" id="follow_users_articles_page">
+      <%= render partial: 'shared/article_contents', locals: {articles: @follow_users_articles} %>
+    </div>
+    <div id="follow_users_articles_page_btn">
+      <%= paginate @follow_users_articles, param_name: "follow_users_articles_page", remote: true %>
+    </div>
+  <% else %>
+    <p class="non-message">現在フォローしているユーザーはいません</p>
+  <% end %>
+<% end %>
+
+<%= link_to new_article_path do %>
+  <div class="article-new-btn">
+    <%= image_tag "article_new.png", class: "article-new-img", alt: "article-new-image" %>
+    <p class="article-new-text">New Article</p>
+  </div>
+<% end %>

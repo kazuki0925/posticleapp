@@ -1,12 +1,10 @@
-<%= render 'shared/header' %>
-
 <div class="page-title">
   <h1>検索結果</h1>
 </div>
 
 <div class="search-result-index">
   <% if @articles.length != 0 %>
-    <h1 class="search-result"><%= @articles.length %>件ヒットしました。</h1>
+    <h2 class="search-result"><%= @articles.length %>件ヒットしました。</h2>
     <%= render partial: 'shared/article_contents', locals: {articles: @articles} %>
   <% else %>
     <h1 class="search-result">検索結果が見つかりませんでした</h1>

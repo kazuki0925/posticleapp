@@ -1,5 +1,3 @@
-<%= render 'shared/header' %>
-
 <% if user_signed_in? && current_user.id == @article.user_id %>
   <%= link_to edit_article_path(@article) do %>
     <%= image_tag "edit_img.png", class: "user-edit-img" %>

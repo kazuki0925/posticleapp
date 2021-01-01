@@ -1,14 +1,9 @@
-<%= render "shared/second-header" %>
+<div class="page-title">
+  <h1>ログインページ</h1>
+</div>
 
-<div class="user-form-page">
-  <div class="page-title">
-    <h1>ログインページ</h1>
-  </div>
-
-  <div class="user-form-contents">
+<div class="user-form-contents">
   <%= form_with model: @user, url: new_user_session_path, local: true, class: "users-form" do |f| %>
-  <%= flash[:notice] %>
-  <%= flash[:alert] %>
 
     <div class="field">
       <%= f.label :email %><br />
@@ -33,7 +28,4 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
-  </div>
-
 </div>
-

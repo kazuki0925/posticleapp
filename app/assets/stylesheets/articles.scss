@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-page-index {
-  width: 100vw;
-}
 // index.html.erbの記事一覧
 .article-new-btn {
   height: 130px;
@@ -40,63 +37,31 @@
 }
 
 // new.html.erbの新規記事投稿画面
-.img-select-btn {
-  height: 130px;
-  width: 130px;
-  position: fixed;
-  top: 100px;
-  right: 10px;
-  border-radius: 10px;
-  background-color: #fffaf0;
-  opacity: 0.8;
-}
-
-.img-select-text {
-  font-size: 10px;
-  position: fixed;
-  top: 105px;
-  right: 15px;
-  font-weight: bold;
-  color: rgb(58, 171, 210);
-
-}
-
-.img-select-icon {
-  height: 100px;
-  position: fixed;
-  top: 125px;
-  right: 25px;
-}
-
-.article-new-form {
+.input-articles {
   width: 80vw;
   margin: 0 auto;
+  position: relative;
+  z-index: 0;
 }
 
-.new-article-title p{
-  font-size: 25px;
+.article-form {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.article-form h3{
+  margin-bottom: 5px;
 }
 
 .input-article-title {
   width: 100%;
-  padding: 0 5px;
-}
-
-.new-article-category p{
-  font-size: 25px;
-}
-
-.new-article-text p{
-  font-size: 25px;
+  padding: 5px;
 }
 
 .input-article-text {
   width: 100%;
-  padding: 0 5px;
-}
-
-.article-submit {
-  border: 1px solid red;
+  padding: 5px;
+  margin-bottom: 50px;
 }
 
 .submit-article-btn {
@@ -178,8 +143,8 @@
 
 // 記事検索結果画面
 .search-result {
-  font-size: 25px;
-  padding: 0 30px 10px;
+  text-align: center;
+  margin: 50px 0;
 }
 
 .search-result-index ul{

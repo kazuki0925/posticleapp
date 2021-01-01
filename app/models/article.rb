@@ -18,6 +18,18 @@ class Article < ApplicationRecord
       Article.all
     end
   end
+
+  def self.evaluation(articles_evaluation, articles)
+    articles.each do |article|
+      if article.good_evaluations.length + article.bad_evaluations.length != 0
+        article_evaluation = 100 * article.good_evaluations.length / (article.good_evaluations.length + article.bad_evaluations.length)
+        articles_evaluation << {score: article_evaluation, count: article.good_evaluations.length, name: article}
+      else
+        article_evaluation = 0
+        articles_evaluation << {score: article_evaluation, count: article.good_evaluations.length, name: article}
+      end
+    end
+  end
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
