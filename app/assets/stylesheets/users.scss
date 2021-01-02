@@ -8,6 +8,19 @@
   border: 1px solid gray;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
+}
+
+.user-profile-icon{
+  margin: 10px auto;
+  border:1px solid gray;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.profile-icon {
+  height: 80px;
+  width: 80px;
 }
 
 .user-profile h2 {
@@ -20,15 +33,19 @@
   background-color: lightgray;
 }
 
-.user-profile-list {
-  display: flex;
+.user-edit-link {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 15px;
 }
 
 .user-profile-list {
+  display: flex;
   background-color: white;
 }
 
-.user-profile-list h2 {
+.user-profile-list>h2 {
   width: 40%;
   border-top: 1px solid lightgray;
   border-right: 1px solid lightgray;
@@ -36,14 +53,108 @@
   padding: 10px 0 ;
 }
 
-.user-profile-list p {
+.user-profile-list>p {
   width: 60%;
   padding: 10px;
   font-size: 20px;
   border-top: 1px solid lightgray;
 }
 
-.user-articles-content h2 {
+#follow-link:hover, #follower-link:hover {
+  cursor: pointer;
+  color: lightblue;
+}
+
+.follow-modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.modal-bg{
+  background-color: rgba(0,0,0,0.7);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.follow-modal-content{
+  background-color: whitesmoke;
+  height: 80vh;
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+}
+
+.follow-modal-content>h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.follow-modal-content>p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.follow-user-lists {
+  overflow-y:scroll;
+  height: 75vh;
+}
+
+.follow-user-list {
+  margin: 10px;
+  padding: 10px 0;
+  border-bottom: 1px lightgray solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.follow-list-icon{
+  border:1px solid gray;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-profile-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: gray;
+  color: white;
+  height: 30px;
+  width: 50vw;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.follower-modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.user-articles-content>h2 {
   font-size: 25px;
   color:  #191970;
   font-weight: bold;

@@ -1,0 +1,22 @@
+<div class="page-title">
+  <h1>ユーザー登録情報の編集</h1>
+</div>
+
+<div class="user-form-contents">
+  <%= form_with model: @user, url: user_path, local: true, class: "users-form" do |f| %>
+
+    <div class="field">
+      <%= f.label :nickname %><br />
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "更新", class: "action-btn" %>
+    </div>
+  <% end %>
+</div>

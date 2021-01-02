@@ -1,1 +1,2 @@
 $('.follows').html("<%= escape_javascript(render partial: "relationships/follow_btn", locals: {user: @user}) %>");
+$('.follows-small').html("<%= escape_javascript(render partial: "relationships/follow_btn_small", locals: {user: @user}) %>");
