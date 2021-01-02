@@ -1,0 +1,20 @@
+<div class="modal-bg follow-modal-close"></div>
+<div class="follow-modal-content">
+  <% if user.followings.length != 0 %>
+    <h3>フォロー中のユーザー</h3>
+    <ul class="follow-user-lists">
+      <% user.followings.each do |following| %>
+        <li class="follow-user-list">
+          <div class="follow-list-icon">
+            <%= image_tag "profile_icon.png", class: "list-profile-icon", alt: "profile-icon" %>
+          </div>
+          <h2><%= following.nickname%></h2>
+          <%= render partial: "relationships/follow_btn_small", locals: {user: following} %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>現在フォローしているユーザはいません</p>
+  <% end %>
+  <p class="follow-modal-close close-btn">閉じる</p>
+</div>
