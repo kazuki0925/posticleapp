@@ -25,7 +25,7 @@ RSpec.describe Article, type: :model do
         it 'titleが空だと投稿できない' do
           @article.title = nil
           @article.valid?
-          expect(@article.errors.full_messages).to include("Title can't be blank")
+          expect(@article.errors.full_messages).to include("タイトルを入力してください")
         end
         it 'titleが40字より多いと投稿できない' do
           over_title = "あ"
@@ -34,12 +34,12 @@ RSpec.describe Article, type: :model do
           end
           @article.title = over_title
           @article.valid?
-          expect(@article.errors.full_messages).to include("Title is too long (maximum is 40 characters)")
+          expect(@article.errors.full_messages).to include("タイトルは40文字以内で入力してください")
         end
         it 'textが空では投稿できない' do
           @article.text = nil
           @article.valid?
-          expect(@article.errors.full_messages).to include("Text can't be blank")
+          expect(@article.errors.full_messages).to include("テキストを入力してください")
         end
         it 'textが15000字より多いと投稿できない' do
           over_text = "あ"
@@ -48,7 +48,8 @@ RSpec.describe Article, type: :model do
           end
           @article.text = over_text
           @article.valid?
-          expect(@article.errors.full_messages).to include("Text is too long (maximum is 15000 characters)")
+          binding.pry
+          expect(@article.errors.full_messages).to include("テキストは15000文字以内で入力してください")
         end
       end
     end

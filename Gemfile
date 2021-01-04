@@ -73,3 +73,4 @@ gem "aws-sdk-s3", require: false
 gem 'active_hash'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'rails-i18n'

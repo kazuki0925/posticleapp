@@ -17,7 +17,7 @@ RSpec.describe Comment, type: :model do
         it 'textが空だと投稿できない' do
           @comment.text = nil
           @comment.valid?
-          expect(@comment.errors.full_messages).to include("Text can't be blank")
+          expect(@comment.errors.full_messages).to include("Textを入力してください")
         end
         it 'textが2000字より多いと投稿できない' do
           over_text = "あ"
@@ -26,7 +26,7 @@ RSpec.describe Comment, type: :model do
           end
           @comment.text = over_text
           @comment.valid?
-          expect(@comment.errors.full_messages).to include("Text is too long (maximum is 2000 characters)")
+          expect(@comment.errors.full_messages).to include("Textは2000文字以内で入力してください")
         end
       end
     end

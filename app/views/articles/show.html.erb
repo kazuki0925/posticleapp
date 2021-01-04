@@ -36,7 +36,8 @@
       <% if user_signed_in? %>
         <div class="comment-content-form">
           <%= form_with model: @comment, url: article_comments_path(@article), local: true do |f| %>
-            <h2>この記事に対するコメントを書く</h2>
+            <%= render 'shared/error_messages', model: f.object %>
+            <p>この記事に対するコメントを書く</p>
             <%= f.text_area :text, class:"input-article-comment", placeholder:"コメントを入力", rows:"5", maxlength:"250", wrap:"soft"%>
             <%= f.submit "コメントを送信", class:"comment-submit-btn" %>
           <% end %>
@@ -51,13 +52,13 @@
             <p><%= comment.text %></p>
             <p class="comment-user-name"><%= comment.user.nickname %>さん</p>
               <% if user_signed_in? && comment.user_id == current_user.id %>
-              <%= link_to "コメントを削除", article_comment_path(comment), method: :delete, class: "comment-delete" %>
+              <%= link_to "コメントを削除", "/articles/#{@article.id}/comments/#{comment.id}", method: :delete, class: "comment-delete" %>
               <% end %>
             </li>
           <% end %>
         </ul>
       <% else %>
-        <h2>この記事に対するコメントはまだありません</h2>
+        <p>この記事に対するコメントはまだありません</p>
       <% end %>
     </div>
   </div>
