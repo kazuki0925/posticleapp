@@ -27,6 +27,11 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def attach
+    attachment = Attachment.create! image: params[:image]
+    render json: { filename: url_for(attachment.image.variant(resize: '480x270')) }
+  end
+
   def create
     @article = Article.new(article_params)
     if @article.save

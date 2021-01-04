@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
+  post 'articles/attach', to: 'articles#attach'
 
 end
