@@ -1,9 +1,16 @@
 ja:
- activerecord:
-   attributes:
-     user:
-       nickname: ニックネーム
-     article:
-       title: タイトル
-       text: テキスト
-       image: 画像
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      article:
+        title: タイトル
+        text: テキスト
+        image: 画像
+  views:
+    pagination:
+      previous: "« 前ページ"
+      next: "次ページ »"
+      truncate: "..."
+      first: "最初"
+      last: "最後"
